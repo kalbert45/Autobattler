@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cj5eqkclvlqhe"]
+
+[ext_resource type="Script" uid="uid://b3ksbkik8adh5" path="res://Autoload/BGM.gd" id="1_hgeje"]
+
+[node name="Bgm" type="AudioStreamPlayer" unique_id=2082904282]
+script = ExtResource("1_hgeje")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=218168107]

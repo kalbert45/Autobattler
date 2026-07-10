@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://176ypp48exkd"]
+
+[ext_resource type="Texture2D" uid="uid://hc7peuxv07wo" path="res://Common/System/Board/tile.png" id="1_4y01v"]
+
+[node name="Tile" type="MarginContainer" unique_id=250352787]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -584.0
+offset_bottom = -322.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=792728913]
+layout_mode = 2
+texture = ExtResource("1_4y01v")
+stretch_mode = 2
