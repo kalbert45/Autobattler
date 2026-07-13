@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://drfmj11uqcj50"]
+
+[ext_resource type="PackedScene" uid="uid://dtll4s0ic17qp" path="res://Entities/Units/unit.tscn" id="1_2xbkh"]
+[ext_resource type="Resource" uid="uid://dhvrva2ajva0n" path="res://Entities/Units/UNIT_DATAS/UD_ELEMENTAL.tres" id="2_hxy1w"]
+[ext_resource type="Texture2D" uid="uid://g2g1b8w6kfq0" path="res://Entities/Units/UNIT_TEXTURES/T_UNIT_ELEMENTAL.png" id="2_ulvg4"]
+
+[node name="Elemental" unique_id=145328687 instance=ExtResource("1_2xbkh")]
+data = ExtResource("2_hxy1w")
+
+[node name="Sprite2D" parent="." index="2" unique_id=1045866185]
+texture = ExtResource("2_ulvg4")

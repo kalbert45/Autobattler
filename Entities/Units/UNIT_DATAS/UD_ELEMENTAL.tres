@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://dhvrva2ajva0n"]
+
+[ext_resource type="Script" uid="uid://qs65go5dlc7j" path="res://Entities/Units/unit_data.gd" id="1_sg7kq"]
+
+[resource]
+script = ExtResource("1_sg7kq")
+name = "Elemental"
+uid = "uid://drfmj11uqcj50"
+metadata/_custom_type_script = "uid://qs65go5dlc7j"

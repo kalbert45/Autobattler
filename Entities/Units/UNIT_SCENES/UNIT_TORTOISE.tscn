@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dx8opa6o61bci"]
+
+[ext_resource type="PackedScene" uid="uid://dtll4s0ic17qp" path="res://Entities/Units/unit.tscn" id="1_oa4s5"]
+[ext_resource type="Resource" uid="uid://b0k6tlnm4dk4q" path="res://Entities/Units/UNIT_DATAS/UD_TORTOISE.tres" id="2_ujwmf"]
+[ext_resource type="Texture2D" uid="uid://3u5lwqc553ua" path="res://Entities/Units/UNIT_TEXTURES/T_UNIT_TORTOISE.png" id="2_xu1dy"]
+
+[node name="Tortoise" unique_id=145328687 instance=ExtResource("1_oa4s5")]
+data = ExtResource("2_ujwmf")
+
+[node name="Sprite2D" parent="." index="2" unique_id=1045866185]
+texture = ExtResource("2_xu1dy")

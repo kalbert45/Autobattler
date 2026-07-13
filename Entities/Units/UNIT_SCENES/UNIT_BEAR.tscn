@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://becshy5gjp5f8"]
+
+[ext_resource type="PackedScene" uid="uid://dtll4s0ic17qp" path="res://Entities/Units/unit.tscn" id="1_q162y"]
+[ext_resource type="Texture2D" uid="uid://btvjc6hto7lv1" path="res://Entities/Units/UNIT_TEXTURES/T_UNIT_BEAR.png" id="2_0dx84"]
+[ext_resource type="Resource" uid="uid://k1bunvihxhea" path="res://Entities/Units/UNIT_DATAS/UD_BEAR.tres" id="2_1lhne"]
+
+[node name="Bear" unique_id=145328687 instance=ExtResource("1_q162y")]
+data = ExtResource("2_1lhne")
+
+[node name="Sprite2D" parent="." index="2" unique_id=1045866185]
+texture = ExtResource("2_0dx84")

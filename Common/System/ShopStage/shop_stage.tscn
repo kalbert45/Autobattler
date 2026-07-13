@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://ch8ecdvyt2vcr"]
+
+[ext_resource type="Script" uid="uid://dyvuqhq5ha6r" path="res://Common/System/ShopStage/shop_stage.gd" id="1_kaub0"]
+[ext_resource type="Script" uid="uid://djaseqwcwycr5" path="res://Common/System/ShopStage/InputStateMachine/shop_input_handler.gd" id="2_wfo77"]
+[ext_resource type="Script" uid="uid://dgyspdoo443i2" path="res://Common/System/Board/board.gd" id="2_xkvjy"]
+[ext_resource type="Script" uid="uid://c2i4apnapphf3" path="res://Common/System/ShopStage/InputStateMachine/input_state_machine.gd" id="3_bd6qi"]
+[ext_resource type="Script" uid="uid://cekke1xqpibd3" path="res://Common/System/Board/grid.gd" id="3_wfo77"]
+[ext_resource type="Script" uid="uid://du78fwlws1aex" path="res://Common/System/ShopStage/InputStateMachine/States/default.gd" id="4_70kh6"]
+[ext_resource type="PackedScene" uid="uid://176ypp48exkd" path="res://Common/System/Board/tile.tscn" id="4_bd6qi"]
+[ext_resource type="PackedScene" uid="uid://boojr20cp6shd" path="res://Common/System/ShopStage/shop_slot.tscn" id="5_xkvjy"]
+[ext_resource type="Script" uid="uid://c5teweverv28" path="res://Common/System/ShopStage/InputStateMachine/States/unit_selected.gd" id="5_xy0tt"]
+
+[sub_resource type="Resource" id="Resource_fnugp"]
+script = ExtResource("3_wfo77")
+size = Vector2i(4, 4)
+metadata/_custom_type_script = "uid://cekke1xqpibd3"
+
+[node name="ShopStage" type="Control" unique_id=1659696387]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kaub0")
+
+[node name="InputHandler" type="Node" parent="." unique_id=849835085]
+script = ExtResource("2_wfo77")
+
+[node name="InputStateMachine" type="Node" parent="InputHandler" unique_id=576680541]
+script = ExtResource("3_bd6qi")
+
+[node name="Default" type="Node" parent="InputHandler/InputStateMachine" unique_id=837381678]
+script = ExtResource("4_70kh6")
+
+[node name="UnitSelected" type="Node" parent="InputHandler/InputStateMachine" unique_id=47426460]
+script = ExtResource("5_xy0tt")
+
+[node name="Board" type="Control" parent="." unique_id=1604684937 node_paths=PackedStringArray("tiles_node", "units_node")]
+anchors_preset = 0
+offset_left = 314.0
+offset_top = 114.0
+offset_right = 314.0
+offset_bottom = 114.0
+mouse_filter = 2
+script = ExtResource("2_xkvjy")
+_grid = SubResource("Resource_fnugp")
+tiles_node = NodePath("Tiles")
+units_node = NodePath("Units")
+
+[node name="Tiles" type="GridContainer" parent="Board" unique_id=169201777]
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 40.0
+columns = 4
+
+[node name="Tile" parent="Board/Tiles" unique_id=250352787 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile2" parent="Board/Tiles" unique_id=2098157695 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile3" parent="Board/Tiles" unique_id=443244567 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile4" parent="Board/Tiles" unique_id=1275173229 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile5" parent="Board/Tiles" unique_id=1316348895 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile6" parent="Board/Tiles" unique_id=1092420338 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile7" parent="Board/Tiles" unique_id=61543000 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile8" parent="Board/Tiles" unique_id=1478562049 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile9" parent="Board/Tiles" unique_id=1179039063 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile10" parent="Board/Tiles" unique_id=305254654 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile11" parent="Board/Tiles" unique_id=1574811881 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile12" parent="Board/Tiles" unique_id=1638748468 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile13" parent="Board/Tiles" unique_id=1993928146 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile14" parent="Board/Tiles" unique_id=1577706087 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile15" parent="Board/Tiles" unique_id=1540928426 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Tile16" parent="Board/Tiles" unique_id=649448939 instance=ExtResource("4_bd6qi")]
+layout_mode = 2
+
+[node name="Units" type="Control" parent="Board" unique_id=489581595]
+y_sort_enabled = true
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="Shop" type="Control" parent="." unique_id=1433505554]
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 169.0
+offset_right = 100.0
+offset_bottom = 209.0
+
+[node name="ShopSlotContainer" type="HBoxContainer" parent="Shop" unique_id=1992571170]
+layout_mode = 0
+offset_left = -11.0
+offset_right = 189.0
+offset_bottom = 40.0
+theme_override_constants/separation = 16
+
+[node name="ShopSlot" parent="Shop/ShopSlotContainer" unique_id=1924347436 instance=ExtResource("5_xkvjy")]
+layout_mode = 2
+
+[node name="ShopSlot2" parent="Shop/ShopSlotContainer" unique_id=43341722 instance=ExtResource("5_xkvjy")]
+layout_mode = 2
+
+[node name="ShopSlot3" parent="Shop/ShopSlotContainer" unique_id=1530679537 instance=ExtResource("5_xkvjy")]
+layout_mode = 2
+
+[node name="BattleButton" type="Button" parent="." unique_id=2087342078]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 298.0
+offset_right = 631.0
+offset_bottom = 353.0
+text = "BATTLE"
+
+[node name="RerollButton" type="Button" parent="." unique_id=609490295]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 298.0
+offset_right = 128.0
+offset_bottom = 353.0
+text = "REROLL $1"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1924835751]
+
+[node name="MoneyLabel" type="RichTextLabel" parent="HUD" unique_id=411788204]
+offset_right = 109.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "$10"
+fit_content = true
+
+[node name="WinLabel" type="RichTextLabel" parent="HUD" unique_id=1487695932]
+offset_left = 103.0
+offset_right = 212.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "0/10"
+fit_content = true
+
+[node name="LivesLabel" type="RichTextLabel" parent="HUD" unique_id=1059928695]
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 85.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "3"
+fit_content = true
+
+[connection signal="pressed" from="BattleButton" to="." method="_on_battle_button_pressed"]
+[connection signal="pressed" from="RerollButton" to="." method="_on_reroll_button_pressed"]

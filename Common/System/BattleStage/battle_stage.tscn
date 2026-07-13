@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://bhosli4oylklw"]
+
+[ext_resource type="Script" uid="uid://4ip8kiuwelso" path="res://Common/System/BattleStage/battle_stage.gd" id="1_q0ph5"]
+[ext_resource type="Script" uid="uid://dgyspdoo443i2" path="res://Common/System/Board/board.gd" id="2_ajsjq"]
+[ext_resource type="Script" uid="uid://cekke1xqpibd3" path="res://Common/System/Board/grid.gd" id="3_sdlos"]
+[ext_resource type="PackedScene" uid="uid://176ypp48exkd" path="res://Common/System/Board/tile.tscn" id="4_3sffk"]
+
+[sub_resource type="Resource" id="Resource_cavnl"]
+script = ExtResource("3_sdlos")
+size = Vector2i(8, 4)
+metadata/_custom_type_script = "uid://cekke1xqpibd3"
+
+[node name="BattleStage" type="Control" unique_id=1201816975]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_q0ph5")
+
+[node name="Board" type="Control" parent="." unique_id=99286992 node_paths=PackedStringArray("tiles_node", "units_node")]
+anchors_preset = 0
+offset_left = 87.0
+offset_top = 128.0
+offset_right = 563.0
+offset_bottom = 292.0
+script = ExtResource("2_ajsjq")
+_grid = SubResource("Resource_cavnl")
+tiles_node = NodePath("Tiles")
+units_node = NodePath("Units")
+
+[node name="Tiles" type="GridContainer" parent="Board" unique_id=1755513547]
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 40.0
+columns = 8
+
+[node name="Tile" parent="Board/Tiles" unique_id=888128170 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile2" parent="Board/Tiles" unique_id=250352787 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile3" parent="Board/Tiles" unique_id=1619697968 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile4" parent="Board/Tiles" unique_id=1379377765 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile5" parent="Board/Tiles" unique_id=2115863412 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile6" parent="Board/Tiles" unique_id=872346629 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile7" parent="Board/Tiles" unique_id=663956411 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile8" parent="Board/Tiles" unique_id=1382724821 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile9" parent="Board/Tiles" unique_id=1004989847 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile10" parent="Board/Tiles" unique_id=1609441156 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile11" parent="Board/Tiles" unique_id=585697249 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile12" parent="Board/Tiles" unique_id=1973078671 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile13" parent="Board/Tiles" unique_id=1325362395 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile14" parent="Board/Tiles" unique_id=1517499236 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile15" parent="Board/Tiles" unique_id=1714413664 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile16" parent="Board/Tiles" unique_id=1882007981 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile17" parent="Board/Tiles" unique_id=1539388078 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile18" parent="Board/Tiles" unique_id=212447786 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile19" parent="Board/Tiles" unique_id=31110378 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile20" parent="Board/Tiles" unique_id=541016933 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile21" parent="Board/Tiles" unique_id=1006626561 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile22" parent="Board/Tiles" unique_id=1464493972 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile23" parent="Board/Tiles" unique_id=2032558668 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile24" parent="Board/Tiles" unique_id=1860662709 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile25" parent="Board/Tiles" unique_id=564115335 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile26" parent="Board/Tiles" unique_id=743134684 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile27" parent="Board/Tiles" unique_id=1617322101 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile28" parent="Board/Tiles" unique_id=1516607296 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile29" parent="Board/Tiles" unique_id=309326694 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile30" parent="Board/Tiles" unique_id=799624261 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile31" parent="Board/Tiles" unique_id=1770004091 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Tile32" parent="Board/Tiles" unique_id=495060097 instance=ExtResource("4_3sffk")]
+layout_mode = 2
+
+[node name="Units" type="Control" parent="Board" unique_id=1543965270]
+y_sort_enabled = true
+anchors_preset = 0
+offset_left = -87.0
+offset_top = -128.0
+offset_right = -47.0
+offset_bottom = -88.0
+
+[node name="tempbutton" type="Button" parent="." unique_id=724988501]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 281.0
+offset_right = 371.0
+offset_bottom = 312.0
+text = "start battle"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1522032545]
+visible = false
+layout_mode = 0
+offset_left = 178.0
+offset_top = 47.0
+offset_right = 443.0
+offset_bottom = 151.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1567863278]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1132572440]
+layout_mode = 2
+text = "Win"
+
+[node name="ExitButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1834198998]
+layout_mode = 2
+text = "Exit battle"
+
+[connection signal="pressed" from="tempbutton" to="." method="_on_tempbutton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://dngvoivqpcfph"]
+
+[ext_resource type="Script" uid="uid://qs65go5dlc7j" path="res://Entities/Units/unit_data.gd" id="1_w5whn"]
+
+[resource]
+script = ExtResource("1_w5whn")
+name = "Archer"
+uid = "uid://jjis1mlaxyxr"
+metadata/_custom_type_script = "uid://qs65go5dlc7j"

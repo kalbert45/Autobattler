@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://ycamfm0g2m08"]
 
-[ext_resource type="Texture2D" uid="uid://6hfmpx55p5gt" path="res://Common/System/BATTLE_UI_MOCKUP.png" id="1_8i36d"]
+[ext_resource type="PackedScene" uid="uid://ch8ecdvyt2vcr" path="res://Common/System/ShopStage/shop_stage.tscn" id="1_8i36d"]
+[ext_resource type="Script" uid="uid://lddohuhli6mf" path="res://Common/System/Admin/game.gd" id="1_jrly4"]
 
 [node name="Game" type="Control" unique_id=1060816939]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_jrly4")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2051578149]
+[node name="ShopStage" parent="." unique_id=1659696387 instance=ExtResource("1_8i36d")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_8i36d")

@@ -6,4 +6,5 @@
 script = ExtResource("1_sdwd0")
 base_folder = "res://Entities/Units/UNIT_DATAS"
 includes = Array[String](["*.tres"])
+paths = Array[String](["res://Entities/Units/UNIT_DATAS/UD_ARCHER.tres", "res://Entities/Units/UNIT_DATAS/UD_BEAR.tres", "res://Entities/Units/UNIT_DATAS/UD_ELEMENTAL.tres", "res://Entities/Units/UNIT_DATAS/UD_QUEEN.tres", "res://Entities/Units/UNIT_DATAS/UD_TORTOISE.tres", "res://Entities/Units/UNIT_DATAS/UD_WOLF.tres"])
 metadata/_custom_type_script = "uid://dcd4akylkhlsc"

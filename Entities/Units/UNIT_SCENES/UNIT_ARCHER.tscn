@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://jjis1mlaxyxr"]
+
+[ext_resource type="PackedScene" uid="uid://dtll4s0ic17qp" path="res://Entities/Units/unit.tscn" id="1_05w2f"]
+[ext_resource type="Resource" uid="uid://dngvoivqpcfph" path="res://Entities/Units/UNIT_DATAS/UD_ARCHER.tres" id="2_3jvxn"]
+[ext_resource type="Texture2D" uid="uid://bvka8tr5klyt6" path="res://Entities/Units/UNIT_TEXTURES/T_UNIT_ARCHER.png" id="2_dsj1c"]
+
+[node name="Archer" unique_id=145328687 instance=ExtResource("1_05w2f")]
+data = ExtResource("2_3jvxn")
+
+[node name="Sprite2D" parent="." index="2" unique_id=1045866185]
+texture = ExtResource("2_dsj1c")

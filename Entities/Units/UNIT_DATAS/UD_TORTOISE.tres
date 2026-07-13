@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://b0k6tlnm4dk4q"]
+
+[ext_resource type="Script" uid="uid://qs65go5dlc7j" path="res://Entities/Units/unit_data.gd" id="1_yuio5"]
+
+[resource]
+script = ExtResource("1_yuio5")
+name = "Tortoise"
+uid = "uid://dx8opa6o61bci"
+metadata/_custom_type_script = "uid://qs65go5dlc7j"

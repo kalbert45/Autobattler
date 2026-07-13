@@ -1,8 +1,130 @@
 [gd_scene format=3 uid="uid://dtll4s0ic17qp"]
 
 [ext_resource type="Script" uid="uid://cclicloiqutv2" path="res://Entities/Units/unit.gd" id="1_vw625"]
+[ext_resource type="Texture2D" uid="uid://hc7peuxv07wo" path="res://Common/System/Board/tile.png" id="2_5mvwf"]
+[ext_resource type="Texture2D" uid="uid://dgovu2bno4g14" path="res://Entities/Units/UNIT_TEXTURES/filler_unit_tex.png" id="2_bl5ya"]
+[ext_resource type="Shader" uid="uid://34wc5ovnbpaq" path="res://Assets/Shaders/pixel_outline.gdshader" id="3_gu140"]
+[ext_resource type="Script" uid="uid://dj0m3kr42lb3a" path="res://Entities/Units/cd_timer.gd" id="3_uo5aa"]
+[ext_resource type="PackedScene" uid="uid://di0ak22p8mx8t" path="res://Common/UI/Tooltips/Tooltip.tscn" id="5_peu4l"]
 
-[node name="Unit" type="Control" unique_id=145328687]
+[sub_resource type="Animation" id="Animation_vw625"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_bl5ya"]
+resource_name = "use_ability"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uo5aa"]
+_data = {
+&"idle": SubResource("Animation_vw625"),
+&"use_ability": SubResource("Animation_bl5ya")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdwd0"]
+resource_local_to_scene = true
+shader = ExtResource("3_gu140")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/clr = Color(1, 1, 0, 1)
+shader_parameter/type = 2
+shader_parameter/thickness = 0.0
+shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
+
+[node name="Unit" type="Control" unique_id=145328687 groups=["Units"]]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_vw625")
+
+[node name="DummyTile" type="TextureRect" parent="." unique_id=1943122605]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_5mvwf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1174619623]
+libraries/ = SubResource("AnimationLibrary_uo5aa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1045866185]
+material = SubResource("ShaderMaterial_sdwd0")
+position = Vector2(26, -11)
+texture = ExtResource("2_bl5ya")
+
+[node name="CDTimer" type="Timer" parent="." unique_id=1905325122]
+script = ExtResource("3_uo5aa")
+
+[node name="UI" type="Control" parent="." unique_id=1721778866]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Health" type="Label" parent="UI" unique_id=723766931]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 28.0
+offset_top = 27.0
+offset_right = 68.0
+offset_bottom = 50.0
+text = "250"
+
+[node name="AP" type="Label" parent="UI" unique_id=1504470212]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = 27.0
+offset_right = 39.0
+offset_bottom = 50.0
+text = "0"
+
+[node name="Lvl" type="Label" parent="UI" unique_id=823201489]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = -46.0
+offset_right = 39.0
+offset_bottom = -23.0
+text = "Lvl 1"
+
+[node name="EXPProgress" type="ProgressBar" parent="UI" unique_id=1320154621]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -3.0
+offset_top = -25.0
+offset_right = 33.6
+offset_bottom = -19.0
+mouse_filter = 2
+show_percentage = false
+
+[node name="CDProgress" type="ProgressBar" parent="UI" unique_id=394580690]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -3.0
+offset_top = 25.0
+offset_right = 57.0
+offset_bottom = 31.0
+mouse_filter = 2
+show_percentage = false
+
+[node name="Tooltip" parent="UI" unique_id=1386795458 instance=ExtResource("5_peu4l")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = -30.0
+offset_top = -92.0
+offset_right = 50.0
+offset_bottom = -52.0
+
+[node name="MouseBox" type="Control" parent="." unique_id=1693520334]
+anchors_preset = 0
+offset_left = -1.0
+offset_top = -39.0
+offset_right = 57.0
+offset_bottom = 41.0
+mouse_filter = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="CDTimer" to="." method="_on_cd_timer_timeout"]
