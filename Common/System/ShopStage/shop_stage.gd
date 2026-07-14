@@ -6,6 +6,7 @@ func enter() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	board.initialize(GameState.player_board)
+	GameState.MONEY += 10
 	reroll_shop()
 	
 func exit() -> void:

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://176ypp48exkd" path="res://Common/System/Board/tile.tscn" id="4_bd6qi"]
 [ext_resource type="PackedScene" uid="uid://boojr20cp6shd" path="res://Common/System/ShopStage/shop_slot.tscn" id="5_xkvjy"]
 [ext_resource type="Script" uid="uid://c5teweverv28" path="res://Common/System/ShopStage/InputStateMachine/States/unit_selected.gd" id="5_xy0tt"]
+[ext_resource type="Script" uid="uid://ndyuje17enxu" path="res://Common/System/ShopStage/money_label.gd" id="10_xy0tt"]
 
 [sub_resource type="Resource" id="Resource_fnugp"]
 script = ExtResource("3_wfo77")
@@ -151,6 +152,7 @@ mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 32
 text = "$10"
 fit_content = true
+script = ExtResource("10_xy0tt")
 
 [node name="WinLabel" type="RichTextLabel" parent="HUD" unique_id=1487695932]
 offset_left = 103.0

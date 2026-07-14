@@ -4,10 +4,24 @@
 [ext_resource type="Script" uid="uid://cjlcx1dnx8so6" path="res://Entities/Units/UNIT_SCENES/unit_wolf.gd" id="2_u4kk6"]
 [ext_resource type="Texture2D" uid="uid://dmb580d3qjeai" path="res://Entities/Units/UNIT_TEXTURES/T_UNIT_WOLF.png" id="3_2lk8b"]
 [ext_resource type="Resource" uid="uid://df8dsrqf4htry" path="res://Entities/Units/UNIT_DATAS/UD_WOLF.tres" id="3_llgpo"]
+[ext_resource type="Shader" uid="uid://34wc5ovnbpaq" path="res://Assets/Shaders/pixel_outline.gdshader" id="4_luqdu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dm8o2"]
+resource_local_to_scene = true
+shader = ExtResource("4_luqdu")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/clr = Color(1, 1, 0, 1)
+shader_parameter/type = 2
+shader_parameter/thickness = 0.0
+shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
 
 [node name="Wolf" unique_id=145328687 instance=ExtResource("1_ekqf6")]
 script = ExtResource("2_u4kk6")
 data = ExtResource("3_llgpo")
 
 [node name="Sprite2D" parent="." index="2" unique_id=1045866185]
+material = SubResource("ShaderMaterial_dm8o2")
 texture = ExtResource("3_2lk8b")

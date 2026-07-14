@@ -7,15 +7,18 @@ func _ready() -> void:
 	board.check_battle_end.connect(_on_check_battle_end)
 
 func enter() -> void:
-	var dummy_enemy : Dictionary[Vector2i, UnitData]= {Vector2i(2, 1) : load("res://Entities/Units/UNIT_DATAS/UD_WOLF.tres")}
+	var enemy_board: Dictionary[Vector2i, UnitData] = await HTTPHandler.get_ghost_board()
+	if enemy_board.is_empty():
+		enemy_board= {Vector2i(2, 1) : load("res://Entities/Units/UNIT_DATAS/UD_WOLF.tres")}
 	await get_tree().process_frame
 	await get_tree().process_frame
-	board.initialize(GameState.player_board, dummy_enemy)
+	board.initialize(GameState.player_board, enemy_board)
 	
 func exit() -> void:
 	SignalBus.emit_signal("exit_stage", self)
 
 func _on_check_battle_end() -> void:
+	await get_tree().process_frame
 	var player_unit_count := 0
 	var enemy_unit_count := 0
 	for unit : Unit in get_tree().get_nodes_in_group("Units"):

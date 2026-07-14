@@ -23,6 +23,8 @@ Global="*uid://5hht6nqe2foc"
 SignalBus="*uid://cjofa5gjjrv4c"
 DialogueManager="*uid://c3rodes2l3gxb"
 Generator="*uid://dxdcgwhw5tple"
+Constants="*uid://djpjedvb4qm7v"
+HTTPHandler="*uid://car0exriyiei3"
 
 [display]
 
@@ -35,7 +37,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg")
+enabled=PackedStringArray("res://addons/awaitable_http_request/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg")
 
 [file_customization]
 
@@ -81,4 +83,4 @@ Controller_B={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.34901962, 0.34509805, 0.3372549, 1)

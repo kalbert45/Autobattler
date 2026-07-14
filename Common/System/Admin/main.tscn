@@ -1,7 +1,26 @@
 [gd_scene format=3 uid="uid://bhd5wuflewaip"]
 
 [ext_resource type="PackedScene" uid="uid://ycamfm0g2m08" path="res://Common/System/Admin/game.tscn" id="1_kjnat"]
+[ext_resource type="Shader" uid="uid://uilkqcpvwqhf" path="res://Assets/Shaders/grayscale.gdshader" id="2_e2j5v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kjnat"]
+shader = ExtResource("2_e2j5v")
+shader_parameter/grayscale = true
+shader_parameter/linear_interp = false
+shader_parameter/interp_sharpness = Vector2i(1, 1)
 
 [node name="Main" type="Node" unique_id=1965243905]
 
 [node name="Game" parent="." unique_id=1060816939 instance=ExtResource("1_kjnat")]
+
+[node name="PostProcess" type="CanvasLayer" parent="." unique_id=44270358]
+layer = 99
+
+[node name="Grayscale" type="ColorRect" parent="PostProcess" unique_id=1482034186]
+material = SubResource("ShaderMaterial_kjnat")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

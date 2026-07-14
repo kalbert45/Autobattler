@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://car0exriyiei3"]
+
+[ext_resource type="Script" uid="uid://brfyqjv8wl4g0" path="res://Autoload/HTTPHandler.gd" id="1_ij1p4"]
+[ext_resource type="Script" uid="uid://boqng23tsxqed" path="res://addons/awaitable_http_request/awaitable_http_request.gd" id="2_456ec"]
+
+[node name="HTTPHandler" type="Node" unique_id=965248218 node_paths=PackedStringArray("http")]
+script = ExtResource("1_ij1p4")
+http = NodePath("AwaitableHTTPRequest")
+
+[node name="AwaitableHTTPRequest" type="HTTPRequest" parent="." unique_id=1881469738]
+script = ExtResource("2_456ec")
+metadata/_custom_type_script = "uid://boqng23tsxqed"

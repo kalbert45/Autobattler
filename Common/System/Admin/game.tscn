@@ -10,3 +10,5 @@ script = ExtResource("1_jrly4")
 
 [node name="ShopStage" parent="." unique_id=1659696387 instance=ExtResource("1_8i36d")]
 layout_mode = 0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=721145201]

@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://5hht6nqe2foc"]
 
 [ext_resource type="Script" uid="uid://cl7guq0ansmv1" path="res://Autoload/Global.gd" id="1_offjo"]
+[ext_resource type="Script" uid="uid://boqng23tsxqed" path="res://addons/awaitable_http_request/awaitable_http_request.gd" id="2_jpjbp"]
 
 [node name="Global" type="Node" unique_id=518777480]
 script = ExtResource("1_offjo")
+
+[node name="AwaitableHTTPRequest" type="HTTPRequest" parent="." unique_id=1766176785]
+script = ExtResource("2_jpjbp")
+metadata/_custom_type_script = "uid://boqng23tsxqed"
