@@ -3,9 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://dtll4s0ic17qp" path="res://Entities/Units/unit.tscn" id="1_05w2f"]
 [ext_resource type="Resource" uid="uid://dngvoivqpcfph" path="res://Entities/Units/UNIT_DATAS/UD_ARCHER.tres" id="2_3jvxn"]
 [ext_resource type="Texture2D" uid="uid://bvka8tr5klyt6" path="res://Entities/Units/UNIT_TEXTURES/T_UNIT_ARCHER.png" id="2_dsj1c"]
+[ext_resource type="Shader" uid="uid://34wc5ovnbpaq" path="res://Assets/Shaders/pixel_outline.gdshader" id="3_566gd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_566gd"]
+resource_local_to_scene = true
+shader = ExtResource("3_566gd")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/clr = Color(1, 1, 0, 1)
+shader_parameter/type = 2
+shader_parameter/thickness = 0.0
+shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
 
 [node name="Archer" unique_id=145328687 instance=ExtResource("1_05w2f")]
 data = ExtResource("2_3jvxn")
 
+[node name="DummyTile" parent="." index="0" unique_id=1943122605]
+visible = false
+
 [node name="Sprite2D" parent="." index="2" unique_id=1045866185]
+material = SubResource("ShaderMaterial_566gd")
+position = Vector2(30, -6)
 texture = ExtResource("2_dsj1c")

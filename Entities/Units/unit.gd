@@ -19,13 +19,13 @@ var _tween : Tween
 var current_health := 100 :
 	set(value):
 		current_health = clamp(value, 0, data.max_health)
-		%Health.text = str(current_health)
+		#%Health.text = str(current_health)
 		if current_health <= 0:
 			death()
 var level := 1 :
 	set(value):
 		level = value
-		%Lvl.text = "Lvl" + str(level)
+		%Lvl.text = "Lvl " + str(level)
 		if level == MAX_LEVEL:
 			%EXPProgress.visible = false
 		data.level = level
@@ -46,6 +46,7 @@ var selected := false :
 @onready var cd_timer : CooldownTimer = $CDTimer
 @onready var cd_progress = %CDProgress
 @onready var mouse_box = $MouseBox
+@onready var tooltip : Tooltip = %Tooltip
 
 func _ready() -> void:
 	SignalBus.battle_start.connect(_on_battle_start)
@@ -67,7 +68,10 @@ func _on_battle_end(_win : bool) -> void:
 	cd_timer.stop()
 
 func _process(_delta: float) -> void:
-	cd_progress.value = (cd_timer.time_left / cd_timer.cooldown) * 100.0
+	if cd_timer.is_stopped():
+		cd_progress.value = 0.0
+		return
+	cd_progress.value = (1.0 - cd_timer.time_left / cd_timer.cooldown) * 100.0
 
 #---------------------------------------
 func combine_with(unit : Unit) -> void:
@@ -113,11 +117,11 @@ func use_ability() -> void:
 # visuals
 #-------------------------------
 func toggle_tooltip(on : bool) -> void:
-	set_tooltip()
-	%Tooltip.visible = on
+	tooltip.set_tooltip(self)
+	tooltip.visible = on
 
-func set_tooltip() -> void:
-	pass
+func accept_tooltip(tt : Tooltip) -> void:
+	tt.set_unit_tooltip(self)
 
 func move_to(p : Vector2) -> void:
 	if _tween and _tween.is_running():

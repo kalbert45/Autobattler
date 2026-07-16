@@ -5,6 +5,7 @@
 
 [node name="Global" type="Node" unique_id=518777480]
 script = ExtResource("1_offjo")
+debug = 1
 
 [node name="AwaitableHTTPRequest" type="HTTPRequest" parent="." unique_id=1766176785]
 script = ExtResource("2_jpjbp")

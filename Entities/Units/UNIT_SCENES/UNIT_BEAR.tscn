@@ -3,9 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://dtll4s0ic17qp" path="res://Entities/Units/unit.tscn" id="1_q162y"]
 [ext_resource type="Texture2D" uid="uid://btvjc6hto7lv1" path="res://Entities/Units/UNIT_TEXTURES/T_UNIT_BEAR.png" id="2_0dx84"]
 [ext_resource type="Resource" uid="uid://k1bunvihxhea" path="res://Entities/Units/UNIT_DATAS/UD_BEAR.tres" id="2_1lhne"]
+[ext_resource type="Shader" uid="uid://34wc5ovnbpaq" path="res://Assets/Shaders/pixel_outline.gdshader" id="3_wuuj2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wuuj2"]
+resource_local_to_scene = true
+shader = ExtResource("3_wuuj2")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/clr = Color(1, 1, 0, 1)
+shader_parameter/type = 2
+shader_parameter/thickness = 0.0
+shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
 
 [node name="Bear" unique_id=145328687 instance=ExtResource("1_q162y")]
 data = ExtResource("2_1lhne")
 
+[node name="DummyTile" parent="." index="0" unique_id=1943122605]
+visible = false
+
 [node name="Sprite2D" parent="." index="2" unique_id=1045866185]
+material = SubResource("ShaderMaterial_wuuj2")
+position = Vector2(29, 0)
 texture = ExtResource("2_0dx84")

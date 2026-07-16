@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://176ypp48exkd" path="res://Common/System/Board/tile.tscn" id="4_bd6qi"]
 [ext_resource type="PackedScene" uid="uid://boojr20cp6shd" path="res://Common/System/ShopStage/shop_slot.tscn" id="5_xkvjy"]
 [ext_resource type="Script" uid="uid://c5teweverv28" path="res://Common/System/ShopStage/InputStateMachine/States/unit_selected.gd" id="5_xy0tt"]
+[ext_resource type="FontFile" uid="uid://ct3iedmetcoso" path="res://Assets/Fonts/Fabled_Font.ttf" id="10_tj53q"]
 [ext_resource type="Script" uid="uid://ndyuje17enxu" path="res://Common/System/ShopStage/money_label.gd" id="10_xy0tt"]
 
 [sub_resource type="Resource" id="Resource_fnugp"]
@@ -146,31 +147,41 @@ text = "REROLL $1"
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1924835751]
 
 [node name="MoneyLabel" type="RichTextLabel" parent="HUD" unique_id=411788204]
-offset_right = 109.0
-offset_bottom = 45.0
+offset_left = 17.0
+offset_top = 5.0
+offset_right = 126.0
+offset_bottom = 50.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 32
+theme_override_fonts/normal_font = ExtResource("10_tj53q")
+theme_override_font_sizes/normal_font_size = 20
 text = "$10"
 fit_content = true
 script = ExtResource("10_xy0tt")
 
 [node name="WinLabel" type="RichTextLabel" parent="HUD" unique_id=1487695932]
-offset_left = 103.0
-offset_right = 212.0
-offset_bottom = 45.0
+offset_left = 130.0
+offset_top = 6.0
+offset_right = 239.0
+offset_bottom = 51.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 32
+theme_override_fonts/normal_font = ExtResource("10_tj53q")
+theme_override_font_sizes/normal_font_size = 20
 text = "0/10"
 fit_content = true
 
 [node name="LivesLabel" type="RichTextLabel" parent="HUD" unique_id=1059928695]
-offset_top = 40.0
-offset_right = 40.0
-offset_bottom = 85.0
+offset_left = 73.0
+offset_top = -1.0
+offset_right = 113.0
+offset_bottom = 44.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 32
+theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_fonts/normal_font = ExtResource("10_tj53q")
+theme_override_font_sizes/normal_font_size = 20
 text = "3"
 fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="BattleButton" to="." method="_on_battle_button_pressed"]
 [connection signal="pressed" from="RerollButton" to="." method="_on_reroll_button_pressed"]

@@ -2,16 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://ycamfm0g2m08" path="res://Common/System/Admin/game.tscn" id="1_kjnat"]
 [ext_resource type="Shader" uid="uid://uilkqcpvwqhf" path="res://Assets/Shaders/grayscale.gdshader" id="2_e2j5v"]
+[ext_resource type="Texture2D" uid="uid://6wdyqynl8gv3" path="res://Common/System/SHOP_UI_MOCKUP.png" id="2_jnih2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kjnat"]
 shader = ExtResource("2_e2j5v")
-shader_parameter/grayscale = true
+shader_parameter/grayscale = false
 shader_parameter/linear_interp = false
 shader_parameter/interp_sharpness = Vector2i(1, 1)
 
 [node name="Main" type="Node" unique_id=1965243905]
 
 [node name="Game" parent="." unique_id=1060816939 instance=ExtResource("1_kjnat")]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1969887709]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_jnih2")
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=44270358]
 layer = 99

@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://df8dsrqf4htry" path="res://Entities/Units/UNIT_DATAS/UD_WOLF.tres" id="3_llgpo"]
 [ext_resource type="Shader" uid="uid://34wc5ovnbpaq" path="res://Assets/Shaders/pixel_outline.gdshader" id="4_luqdu"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dm8o2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3j6eo"]
 resource_local_to_scene = true
 shader = ExtResource("4_luqdu")
 shader_parameter/dither_pixel_size = 1.0
@@ -23,5 +23,6 @@ script = ExtResource("2_u4kk6")
 data = ExtResource("3_llgpo")
 
 [node name="Sprite2D" parent="." index="2" unique_id=1045866185]
-material = SubResource("ShaderMaterial_dm8o2")
+material = SubResource("ShaderMaterial_3j6eo")
+position = Vector2(27, 2)
 texture = ExtResource("3_2lk8b")

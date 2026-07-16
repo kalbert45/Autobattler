@@ -4,9 +4,10 @@ const SOUND_MANAGER_SCENE = preload("res://Common/Audio/sound_manager.tscn")
 
 
 enum DEBUG_FLAGS {
+	DISABLE_POST_GHOST = 1 << 0,
 }
 
-@export_flags("SHOW_TIMER") var debug := 0
+@export_flags("DISABLE_POST_GHOST") var debug := 0
 
 var CONTROLLER := false
 

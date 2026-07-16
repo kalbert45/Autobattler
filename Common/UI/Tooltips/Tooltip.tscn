@@ -1,12 +1,26 @@
 [gd_scene format=3 uid="uid://di0ak22p8mx8t"]
 
+[ext_resource type="Script" uid="uid://chnasf7x214u2" path="res://Common/UI/Tooltips/tooltip.gd" id="1_fyoqf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6u8t"]
+bg_color = Color(0.38431373, 0.33333334, 0.39607844, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+
 [node name="Tooltip" type="PanelContainer" unique_id=1928246686]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -484.0
+offset_bottom = -222.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m6u8t")
+script = ExtResource("1_fyoqf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=699841919]
 layout_mode = 2

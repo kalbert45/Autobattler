@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://34wc5ovnbpaq" path="res://Assets/Shaders/pixel_outline.gdshader" id="3_gu140"]
 [ext_resource type="Script" uid="uid://dj0m3kr42lb3a" path="res://Entities/Units/cd_timer.gd" id="3_uo5aa"]
 [ext_resource type="PackedScene" uid="uid://di0ak22p8mx8t" path="res://Common/UI/Tooltips/Tooltip.tscn" id="5_peu4l"]
+[ext_resource type="FontFile" uid="uid://dinky1jo364kw" path="res://Assets/Fonts/Nope 8.ttf" id="6_jusy5"]
 
 [sub_resource type="Animation" id="Animation_vw625"]
 resource_name = "idle"
@@ -30,6 +31,39 @@ shader_parameter/clr = Color(1, 1, 0, 1)
 shader_parameter/type = 2
 shader_parameter/thickness = 0.0
 shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp1kp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2bni"]
+bg_color = Color(0.9764706, 0.7607843, 0.16862746, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdwd0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jusy5"]
+bg_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
+anti_aliasing = false
 
 [node name="Unit" type="Control" unique_id=145328687 groups=["Units"]]
 layout_mode = 3
@@ -60,51 +94,62 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="Health" type="Label" parent="UI" unique_id=723766931]
+[node name="Health" type="RichTextLabel" parent="UI" unique_id=558771894]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 0
-offset_left = 28.0
-offset_top = 27.0
-offset_right = 68.0
-offset_bottom = 50.0
-text = "250"
-
-[node name="AP" type="Label" parent="UI" unique_id=1504470212]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -1.0
-offset_top = 27.0
-offset_right = 39.0
-offset_bottom = 50.0
-text = "0"
+offset_left = -11.0
+offset_top = 29.0
+offset_right = 67.0
+offset_bottom = 52.0
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("6_jusy5")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "250 [color=8fd3ff][20]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Lvl" type="Label" parent="UI" unique_id=823201489]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -1.0
-offset_top = -46.0
-offset_right = 39.0
-offset_bottom = -23.0
+offset_left = 2.0
+offset_top = -36.0
+offset_right = 42.0
+offset_bottom = -13.0
+theme_override_colors/font_color = Color(0.9764706, 0.7607843, 0.16862746, 1)
+theme_override_colors/font_outline_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_jusy5")
+theme_override_font_sizes/font_size = 16
 text = "Lvl 1"
 
 [node name="EXPProgress" type="ProgressBar" parent="UI" unique_id=1320154621]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -3.0
-offset_top = -25.0
-offset_right = 33.6
-offset_bottom = -19.0
+offset_left = 34.0
+offset_top = -31.0
+offset_right = 53.0
+offset_bottom = -25.0
 mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bp1kp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x2bni")
+value = 50.0
 show_percentage = false
 
 [node name="CDProgress" type="ProgressBar" parent="UI" unique_id=394580690]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -3.0
-offset_top = 25.0
-offset_right = 57.0
-offset_bottom = 31.0
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 48.0
+offset_bottom = 32.0
 mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_sdwd0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jusy5")
+value = 50.0
 show_percentage = false
 
 [node name="Tooltip" parent="UI" unique_id=1386795458 instance=ExtResource("5_peu4l")]
@@ -112,14 +157,14 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 1
 offset_left = -30.0
-offset_top = -92.0
+offset_top = -132.0
 offset_right = 50.0
-offset_bottom = -52.0
+offset_bottom = -92.0
 
 [node name="MouseBox" type="Control" parent="." unique_id=1693520334]
 anchors_preset = 0
 offset_left = -1.0
-offset_top = -39.0
+offset_top = -1.0
 offset_right = 57.0
 offset_bottom = 41.0
 mouse_filter = 1

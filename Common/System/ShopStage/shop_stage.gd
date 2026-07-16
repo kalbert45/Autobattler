@@ -14,7 +14,7 @@ func exit() -> void:
 	$BattleButton.disabled = true
 	
 	GameState.player_board = board.board_as_data()
-	
+	await HTTPHandler.post_ghost()
 	SignalBus.emit_signal("exit_stage", self)
 
 func reroll_shop() -> void:
