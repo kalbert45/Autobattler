@@ -3,9 +3,24 @@
 [ext_resource type="PackedScene" uid="uid://dtll4s0ic17qp" path="res://Entities/Units/unit.tscn" id="1_oa4s5"]
 [ext_resource type="Resource" uid="uid://b0k6tlnm4dk4q" path="res://Entities/Units/UNIT_DATAS/UD_TORTOISE.tres" id="2_ujwmf"]
 [ext_resource type="Texture2D" uid="uid://3u5lwqc553ua" path="res://Entities/Units/UNIT_TEXTURES/T_UNIT_TORTOISE.png" id="2_xu1dy"]
+[ext_resource type="Shader" uid="uid://34wc5ovnbpaq" path="res://Assets/Shaders/pixel_outline.gdshader" id="3_w6l3d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13mjo"]
+resource_local_to_scene = true
+shader = ExtResource("3_w6l3d")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/clr = Color(1, 1, 0, 1)
+shader_parameter/type = 2
+shader_parameter/thickness = 0.0
+shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
 
 [node name="Tortoise" unique_id=145328687 instance=ExtResource("1_oa4s5")]
 data = ExtResource("2_ujwmf")
 
 [node name="Sprite2D" parent="." index="2" unique_id=1045866185]
+material = SubResource("ShaderMaterial_13mjo")
+position = Vector2(31, 6)
 texture = ExtResource("2_xu1dy")

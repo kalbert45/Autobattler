@@ -33,7 +33,7 @@ shader_parameter/thickness = 0.0
 shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp1kp"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.42352942, 0.34901962, 0.36078432, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -82,7 +82,7 @@ libraries/ = SubResource("AnimationLibrary_uo5aa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1045866185]
 material = SubResource("ShaderMaterial_sdwd0")
-position = Vector2(26, -11)
+position = Vector2(29, 0)
 texture = ExtResource("2_bl5ya")
 
 [node name="CDTimer" type="Timer" parent="." unique_id=1905325122]
@@ -98,17 +98,17 @@ mouse_filter = 2
 unique_name_in_owner = true
 z_index = 1
 layout_mode = 0
-offset_left = -11.0
-offset_top = 29.0
-offset_right = 67.0
-offset_bottom = 52.0
+offset_left = -19.0
+offset_top = 26.0
+offset_right = 75.0
+offset_bottom = 49.0
 mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("6_jusy5")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "250 [color=8fd3ff][20]"
+text = "250 [color=cddf6c][20][/color]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -116,9 +116,9 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 2.0
-offset_top = -36.0
+offset_top = -37.0
 offset_right = 42.0
-offset_bottom = -13.0
+offset_bottom = -14.0
 theme_override_colors/font_color = Color(0.9764706, 0.7607843, 0.16862746, 1)
 theme_override_colors/font_outline_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
 theme_override_constants/outline_size = 4
@@ -129,10 +129,10 @@ text = "Lvl 1"
 [node name="EXPProgress" type="ProgressBar" parent="UI" unique_id=1320154621]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 34.0
-offset_top = -31.0
-offset_right = 53.0
-offset_bottom = -25.0
+offset_left = 1.0
+offset_top = -23.0
+offset_right = 31.0
+offset_bottom = -17.0
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_bp1kp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x2bni")
@@ -143,23 +143,30 @@ show_percentage = false
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 8.0
-offset_top = 28.0
+offset_top = 26.0
 offset_right = 48.0
-offset_bottom = 32.0
+offset_bottom = 30.0
+pivot_offset = Vector2(20, 0)
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_sdwd0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_jusy5")
 value = 50.0
 show_percentage = false
 
-[node name="Tooltip" parent="UI" unique_id=1386795458 instance=ExtResource("5_peu4l")]
+[node name="TTContainer" type="MarginContainer" parent="UI" unique_id=2106926058]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -222.0
+offset_right = 134.0
+offset_bottom = -22.0
+mouse_filter = 2
+
+[node name="Tooltip" parent="UI/TTContainer" unique_id=1386795458 instance=ExtResource("5_peu4l")]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
-offset_left = -30.0
-offset_top = -132.0
-offset_right = 50.0
-offset_bottom = -92.0
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 8
 
 [node name="MouseBox" type="Control" parent="." unique_id=1693520334]
 anchors_preset = 0

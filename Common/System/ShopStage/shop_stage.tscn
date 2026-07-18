@@ -17,6 +17,13 @@ script = ExtResource("3_wfo77")
 size = Vector2i(4, 4)
 metadata/_custom_type_script = "uid://cekke1xqpibd3"
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77ts2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.24313726, 0.20784314, 0.27450982, 1)
+
 [node name="ShopStage" type="Control" unique_id=1659696387]
 layout_mode = 3
 anchors_preset = 0
@@ -134,6 +141,9 @@ offset_left = 516.0
 offset_top = 298.0
 offset_right = 631.0
 offset_bottom = 353.0
+theme_override_fonts/font = ExtResource("10_tj53q")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_77ts2")
 text = "BATTLE"
 
 [node name="RerollButton" type="Button" parent="." unique_id=609490295]
@@ -147,11 +157,12 @@ text = "REROLL $1"
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1924835751]
 
 [node name="MoneyLabel" type="RichTextLabel" parent="HUD" unique_id=411788204]
-offset_left = 17.0
-offset_top = 5.0
-offset_right = 126.0
-offset_bottom = 50.0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 129.0
+offset_bottom = 55.0
 mouse_filter = 2
+theme_override_colors/default_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_fonts/normal_font = ExtResource("10_tj53q")
 theme_override_font_sizes/normal_font_size = 20
 text = "$10"
@@ -159,22 +170,24 @@ fit_content = true
 script = ExtResource("10_xy0tt")
 
 [node name="WinLabel" type="RichTextLabel" parent="HUD" unique_id=1487695932]
-offset_left = 130.0
-offset_top = 6.0
-offset_right = 239.0
-offset_bottom = 51.0
+offset_left = 195.0
+offset_top = 10.0
+offset_right = 304.0
+offset_bottom = 58.0
 mouse_filter = 2
+theme_override_colors/default_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_fonts/normal_font = ExtResource("10_tj53q")
 theme_override_font_sizes/normal_font_size = 20
 text = "0/10"
 fit_content = true
 
 [node name="LivesLabel" type="RichTextLabel" parent="HUD" unique_id=1059928695]
-offset_left = 73.0
-offset_top = -1.0
-offset_right = 113.0
-offset_bottom = 44.0
+offset_left = 101.0
+offset_top = 3.0
+offset_right = 141.0
+offset_bottom = 51.0
 mouse_filter = 2
+theme_override_colors/default_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_colors/font_outline_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 theme_override_fonts/normal_font = ExtResource("10_tj53q")
 theme_override_font_sizes/normal_font_size = 20

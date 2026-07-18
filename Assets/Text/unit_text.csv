@@ -1,0 +1,11 @@
+keys,en
+UNIT_TORTOISE,Tortoise
+TT_UNIT_TORTOISE,"Cast : Heal self for 50
+Take damage : Damage closest enemy for 50"
+UNIT_QUEEN,Queen
+UNIT_WOLF,Wolf
+TT_UNIT_WOLF,"Cast : Moves to the row with the most enemies, then deals 100 damage to them"
+UNIT_BEAR,Bear
+TT_UNIT_BEAR,"Cast : Moves forward 1 square, then cleaves enemies in the front 6 squares"
+UNIT_ARCHER,Archer
+UNIT_ELEMENTAL,Elemental

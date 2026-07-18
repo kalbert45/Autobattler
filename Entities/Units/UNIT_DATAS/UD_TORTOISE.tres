@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_yuio5")
-name = "Tortoise"
+name = "UNIT_TORTOISE"
+tooltip = "TT_UNIT_TORTOISE"
 uid = "uid://dx8opa6o61bci"
 metadata/_custom_type_script = "uid://qs65go5dlc7j"

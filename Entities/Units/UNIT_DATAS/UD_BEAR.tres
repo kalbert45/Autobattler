@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_s7aip")
-name = "Bear"
+name = "UNIT_BEAR"
+tooltip = "TT_UNIT_BEAR"
 uid = "uid://becshy5gjp5f8"
 metadata/_custom_type_script = "uid://qs65go5dlc7j"

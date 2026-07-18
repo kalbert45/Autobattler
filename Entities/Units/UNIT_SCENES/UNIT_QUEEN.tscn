@@ -3,9 +3,23 @@
 [ext_resource type="PackedScene" uid="uid://dtll4s0ic17qp" path="res://Entities/Units/unit.tscn" id="1_hf1b4"]
 [ext_resource type="Texture2D" uid="uid://pogc5nwuh6uc" path="res://Entities/Units/UNIT_TEXTURES/T_UNIT_QUEEN.png" id="2_3p245"]
 [ext_resource type="Resource" uid="uid://ip1ux8tuk3ig" path="res://Entities/Units/UNIT_DATAS/UD_QUEEN.tres" id="2_erltb"]
+[ext_resource type="Shader" uid="uid://34wc5ovnbpaq" path="res://Assets/Shaders/pixel_outline.gdshader" id="3_x13dk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jt8f1"]
+resource_local_to_scene = true
+shader = ExtResource("3_x13dk")
+shader_parameter/dither_pixel_size = 1.0
+shader_parameter/dither_pixel_offset = Vector2(0, 0)
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/albedo_strength = 1.0
+shader_parameter/clr = Color(1, 1, 0, 1)
+shader_parameter/type = 2
+shader_parameter/thickness = 0.0
+shader_parameter/alpha_dither_pixel_offset = Vector2(0, 0)
 
 [node name="Queen" unique_id=145328687 instance=ExtResource("1_hf1b4")]
 data = ExtResource("2_erltb")
 
 [node name="Sprite2D" parent="." index="2" unique_id=1045866185]
+material = SubResource("ShaderMaterial_jt8f1")
 texture = ExtResource("2_3p245")

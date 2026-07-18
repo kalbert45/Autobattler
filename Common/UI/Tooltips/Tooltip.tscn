@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://di0ak22p8mx8t"]
 
 [ext_resource type="Script" uid="uid://chnasf7x214u2" path="res://Common/UI/Tooltips/tooltip.gd" id="1_fyoqf"]
+[ext_resource type="FontFile" uid="uid://dinky1jo364kw" path="res://Assets/Fonts/Nope 8.ttf" id="2_xoawe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6u8t"]
-bg_color = Color(0.38431373, 0.33333334, 0.39607844, 1)
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.42352942, 0.34901962, 0.36078432, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -11,13 +16,9 @@ border_width_bottom = 1
 border_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
 
 [node name="Tooltip" type="PanelContainer" unique_id=1928246686]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -484.0
-offset_bottom = -222.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(200, 0)
+offset_right = 200.0
+offset_bottom = 61.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_m6u8t")
 script = ExtResource("1_fyoqf")
@@ -25,14 +26,60 @@ script = ExtResource("1_fyoqf")
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=699841919]
 layout_mode = 2
 
-[node name="NameLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=928699034]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=608871921]
 layout_mode = 2
+
+[node name="Tier" type="RichTextLabel" parent="VBoxContainer/HBoxContainer" unique_id=2080722549]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/default_color = Color(0.9843137, 1, 0.5254902, 1)
+theme_override_fonts/normal_font = ExtResource("2_xoawe")
 theme_override_font_sizes/normal_font_size = 16
-text = "Name"
+text = "1"
 fit_content = true
+autowrap_mode = 0
+
+[node name="NameLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer" unique_id=928699034]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.9647059, 0.5058824, 0.5058824, 1)
+theme_override_fonts/normal_font = ExtResource("2_xoawe")
+theme_override_font_sizes/normal_font_size = 16
+text = "UNIT_WOLF"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Price" type="RichTextLabel" parent="VBoxContainer/HBoxContainer" unique_id=1418340541]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/default_color = Color(0.9764706, 0.7607843, 0.16862746, 1)
+theme_override_fonts/normal_font = ExtResource("2_xoawe")
+theme_override_font_sizes/normal_font_size = 16
+text = "1"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
 
 [node name="TTLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1511095803]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 16
-text = "Tooltip"
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_xoawe")
+theme_override_font_sizes/normal_font_size = 10
+text = "TT_UNIT_WOLF"
 fit_content = true
+
+[node name="CDLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=1233649042]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.3019608, 0.60784316, 0.9019608, 1)
+theme_override_fonts/normal_font = ExtResource("2_xoawe")
+theme_override_font_sizes/normal_font_size = 10
+text = "40 Mana"
+fit_content = true
+vertical_alignment = 2

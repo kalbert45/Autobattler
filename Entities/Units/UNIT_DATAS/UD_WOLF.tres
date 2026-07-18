@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_dxaht")
-name = "Wolf"
+name = "UNIT_WOLF"
+tooltip = "TT_UNIT_WOLF"
 uid = "uid://bx7i3honyx204"
 metadata/_custom_type_script = "uid://qs65go5dlc7j"
